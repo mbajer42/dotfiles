@@ -34,6 +34,7 @@ Plug 'tpope/vim-fugitive'
 
 " Language support
 Plug 'vim-python/python-syntax'
+Plug 'fatih/vim-go'
 
 call plug#end()
 
