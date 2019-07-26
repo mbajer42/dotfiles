@@ -3,6 +3,7 @@ alias l='ls -l --color=auto'
 alias grep='grep --color'
 
 set -U fish_user_paths $HOME/.cargo/bin
+export SPARK_HOME=/opt/spark
 
 # colored man output
 # from http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/
