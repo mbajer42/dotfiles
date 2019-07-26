@@ -16,6 +16,11 @@ setenv LESS_TERMCAP_ue \e'[0m'           # end underline
 setenv LESS_TERMCAP_us \e'[04;38;5;146m' # begin underline
 
 function fish_prompt
+
+    if set -q VIRTUAL_ENV
+        printf "(%s) " (basename "$VIRTUAL_ENV")
+    end
+
     set_color yellow
     printf (whoami)
     set_color red
