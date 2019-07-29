@@ -57,7 +57,7 @@ let g:lightline = {
     \ 'colorscheme': 'jellybeans', 
     \ 'active': {
     \   'left': [ [ 'mode' ], 
-    \             [ 'filename', 'modified' ] ],
+    \             [ 'relativepath', 'modified' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ] ]
     \ }
