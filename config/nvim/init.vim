@@ -46,6 +46,7 @@ set incsearch
 set smartcase
 
 " GUI settings
+set termguicolors
 colorscheme gruvbox
 let &colorcolumn=join(range(120,999),",")
 set listchars+=space:·
