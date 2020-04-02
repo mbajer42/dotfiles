@@ -13,6 +13,10 @@ source ~/.config/zsh/environment.zsh
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/p10k.zsh
 
+if [[ -f "$HOME/.config/arch-specific/arch-zsh.zsh" ]]; then
+    source ~/.config/arch-specific/arch-zsh.zsh
+fi
+
 source ~/.zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
