@@ -10,6 +10,7 @@ setopt notify
 setopt share_history
 
 source ~/.config/zsh/environment.zsh
+source ~/.config/zsh/completion.zsh
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/p10k.zsh
 
