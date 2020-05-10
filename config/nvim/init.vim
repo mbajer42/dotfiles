@@ -6,12 +6,14 @@ set expandtab
 
 set clipboard=unnamedplus
 
+let mapleader=','
+
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-map <F2> :NERDTreeToggle<CR>
+map <leader>nt :NERDTreeToggle<CR>
 
 nnoremap H gT
 nnoremap L gt
@@ -33,10 +35,29 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 
 " Language support
-Plug 'vim-python/python-syntax'
 Plug 'fatih/vim-go'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-python/python-syntax'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
+
+" YCM configs
+let g:ycm_autoclose_preview_window_after_insertion=1
+nnoremap <leader>h :YcmCompleter GetDoc<CR>
+nnoremap <C-]> :YcmCompleter GoTo<CR>
+
+" FZF configs
+map <leader>fg :GitFiles<CR>
+map <leader>fa :Ag<CR>
+map <leader>fb :Buffer<CR>
+
+let g:fzf_layout = { 
+    \ 'window': {
+    \   'width': 0.9,
+    \   'height': 0.6,
+    \   'border': 'sharp' }
+    \ }
 
 
 " Search settings
@@ -66,6 +87,7 @@ let g:lightline = {
 
 syntax enable
 let g:python_highlight_all=1
+let g:rustfmt_autosave=1
 
 if has("autocmd")
     filetype on
@@ -75,3 +97,4 @@ if has("autocmd")
 endif
 
 set laststatus=2
+
