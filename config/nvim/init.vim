@@ -4,8 +4,6 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-set clipboard=unnamedplus
-
 let mapleader=','
 
 
@@ -14,6 +12,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 map <leader>nt :NERDTreeToggle<CR>
+
+" copy to clipboard
+noremap <leader>y "+y
+noremap <leader>p "+p
 
 nnoremap H gT
 nnoremap L gt
