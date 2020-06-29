@@ -22,11 +22,10 @@ line-color = #f00
 border-size = 4
 border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+padding-left = 1
+padding-right = 1
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin = 1
 
 font-0 = "Noto Sans Mono:size=10;1"
 font-1 = "Font Awesome 5 Free Regular:size=10;1"
@@ -34,7 +33,7 @@ font-2 = "Font Awesome 5 Free Solid:size=10;1"
 font-3 = "Font Awesome 5 Brands Regular:size=10;1"
 
 modules-left = bspwm
-modules-center = mpd
+modules-center = 
 modules-right = battery1 battery2 eth alsa wlan date
 
 tray-position = right
@@ -46,51 +45,26 @@ cursor-scroll = ns-resize
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = false
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
+enable-scroll = false
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
-; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 1
 
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 2
+label-dimmed-underline = ${colors.background}
 
-; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+label-occupied = %index%
+label-occupied-padding = 1
 
-; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/xbacklight

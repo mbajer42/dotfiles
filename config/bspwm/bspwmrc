@@ -1,10 +1,19 @@
 #! /bin/sh
 
 sxhkd &
+
+if xrandr --listmonitors | grep "Monitors: 3"
+then
+    sh ~/.screenlayout/two_external_monitors.sh
+    bspc monitor eDP-1 -d 1 2 3 4
+    bspc monitor HDMI-2 -d 5 6 7
+    bspc monitor DP-1 -d 8 9 10
+else
+    bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+fi
+
 sh ~/.fehbg &
 polybar main &
-
-bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config border_width         2
 bspc config window_gap           5
