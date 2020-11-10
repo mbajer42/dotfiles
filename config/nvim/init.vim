@@ -41,6 +41,7 @@ Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-python/python-syntax'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
