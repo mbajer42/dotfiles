@@ -37,18 +37,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 
 " Language support
-Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
-Plug 'vim-python/python-syntax'
-Plug 'ycm-core/YouCompleteMe'
-Plug 'cespare/vim-toml'
+Plug 'neovim/nvim-lspconfig'
+Plug 'simrat39/rust-tools.nvim'
 
 call plug#end()
-
-" YCM configs
-let g:ycm_autoclose_preview_window_after_insertion=1
-nnoremap <leader>h :YcmCompleter GetDoc<CR>
-nnoremap <C-]> :YcmCompleter GoTo<CR>
 
 " FZF configs
 map <leader>fg :GitFiles<CR>
@@ -89,8 +82,9 @@ let g:lightline = {
     \ }
 
 syntax enable
-let g:python_highlight_all=1
 let g:rustfmt_autosave=1
+
+lua require('rust-lspconfig')
 
 if has("autocmd")
     filetype on
@@ -100,4 +94,3 @@ if has("autocmd")
 endif
 
 set laststatus=2
-
